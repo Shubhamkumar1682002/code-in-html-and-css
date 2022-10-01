@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            background-color: rgb(10, 10, 10);
+        }
+
+        .contanier {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Main Box Style */
+
+        .main {
+            width: 425px;
+            margin-top: 100px;
+            padding: 10px;
+            box-shadow: gray 5px 5px 20px;
+            border-radius: 5px;
+            background-color: rgb(255, 233, 32);
+        }
+
+        /* Heading Style */
+
+        .heading {
+            text-align: center;
+        }
+
+        /* Button and Input Style */
+
+        .newItem,
+        .addBtn,
+        .btnTask {
+            margin-left: 0px;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 15px;
+            background-color: rgb(255, 233, 32);
+            cursor: pointer;
+        }
+
+        .newItem:focus,
+        .addBtn:focus,
+        .btnTask:focus {
+            outline: 0;
+        }
+
+        .newItem {
+            width: 320px;
+            margin-left: 7px;
+            border: none;
+            border-bottom: 2px solid rgb(21, 20, 20);
+        }
+
+        .addBtn {
+            width: 70px;
+            margin-left: 5px;
+            border: 2px solid rgb(15, 1, 1);
+        }
+
+        .addBtn:hover {
+            background-color: rgb(10, 10, 10);
+            color: rgb(255, 233, 32);
+            transition: 0.5s;
+        }
+
+        .btnTask {
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            display: inline;
+            align-items: right;
+            border: 1px solid rgb(21, 17, 17);
+            border-radius: 0 5px 5px 0;
+        }
+
+        /* To-Do List Style */
+
+        .toDoList li {
+            margin: 5px 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nameTask {
+            width: 100%;
+            margin: 0;
+            padding: 10px;
+            display: inline;
+            border-radius: 5px 0 0 5px;
+            cursor: pointer;
+        }
+
+        .nameTask:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-right: 0;
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        /* Task Panell Style */
+
+        .taskPanell {
+            width: 425px;
+            margin-top: 50px;
+            padding: 10px;
+            box-shadow: gray 5px 5px 20px;
+            border-radius: 5px;
+            background-color: rgb(255, 233, 32);
+        }
+
+        .taskPanell p {
+            margin-left: 10px;
+        }
+
+        .taskPanell p span {
+            font-weight: bolder;
+        }
+
+        /* Changing the position of containers, so they can fit perfectly on the screen */
+
+        @media (max-width: 450px) {
+            .contanier {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contanier">
+        <div class="main">
+            <div>
+                <h1 class="heading">My to-do List</h1>
+                <input type="text" name="newTask" id="addNewTask" placeholder="Enter New Task" class="newItem">
+                <button type="submit" class="addBtn" onclick="addItem()">ADD</button>
+            </div>
+            <div class="toDoList" id="myList">
+            </div>
+        </div>
+
+        <div class="taskPanell">
+            <p>Total Task: <span id="totalTask">0</span></p>
+            <p>Panding Task: <span id="pandingTask">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let i = 0, totalTask = 0, pandingTask = 0;
+
+        function addItem() {
+            let toDoList = document.getElementById("myList");
+            let addNewTask = document.getElementById("addNewTask");
+            let addNewTaskValue = document.getElementById("addNewTask").value;
+
+            if (addNewTaskValue != "") {
+                let li = document.createElement("li");
+                let para = document.createElement("p");
+                let button = document.createElement("button");
+
+                li.setAttribute('id', addNewTask.value);
+
+                li.appendChild(para);
+                li.appendChild(button);
+
+                para.appendChild(document.createTextNode(addNewTask.value));
+                button.appendChild(document.createTextNode("X"));
+
+                toDoList.appendChild(li);
+
+                li.id = "task" + i;
+
+                para.classList.add("nameTask");
+                para.id = "para" + i;
+                para.onclick = function () { doneItem(this.id) };
+
+                button.classList.add("btnTask");
+                button.id = "button" + i;
+                button.onclick = function () { removeItem(li.id) };
+
+                i++, totalTask++, pandingTask++;
+                document.getElementById("pandingTask").innerHTML = pandingTask;
+                document.getElementById("totalTask").innerHTML = totalTask;
+
+                document.getElementById("addNewTask").value = "";
+            }
+
+            else {
+                alert("Please Enter Real Task");
+            }
+        }
+
+        function doneItem(idName) {
+            document.getElementById(idName).style.textDecoration = "line-through";
+
+            if (pandingTask > 0) {
+                pandingTask--;
+                document.getElementById("pandingTask").innerHTML = pandingTask;
+            }
+        }
+
+        function removeItem(liIdName) {
+            document.getElementById(liIdName).style.display = "none";
+
+            if (pandingTask > 0) {
+                pandingTask--;
+                document.getElementById("pandingTask").innerHTML = pandingTask;
+            }
+
+            if (totalTask > 0) {
+                totalTask--;
+                document.getElementById("totalTask").innerHTML = totalTask;
+            }
+
+            if (pandingTask < totalTask && pandingTask != 0) {
+                pandingTask = totalTask;
+                document.getElementById("pandingTask").innerHTML = pandingTask;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

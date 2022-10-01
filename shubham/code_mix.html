@@ -1,0 +1,496 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Baloo Bhai', cursive;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        background: url('bg2.jpg');
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 60px;
+        top: 20px;
+    }
+
+    .left img {
+        width: 164px;
+       /* filter: invert(100%);  */
+    }
+
+    .left div {
+        line-height: 19px;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .mid {
+        display: block;
+        width: 60%;
+        margin: 60px 210px;
+        /* border: 2px solid green; */
+    }
+
+    .right {
+        position: absolute;
+        right: 34px;
+        top: 43px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: grey;
+
+    }
+
+    .btn {
+        font-family: 'Baloo Bhai', cursive;
+        margin: 0px 9px;
+        background-color: black;
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid grey;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(31, 30, 30);
+    }
+
+    .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  color: #333
+}
+
+
+    .container {
+        border: 2px solid white;
+        margin: 160px 50px;
+        padding: 70px;
+        width: 80%;
+        border-radius: 28px;
+    }
+
+    .form-group input {
+        font-family: 'Baloo Bhai', cursive;
+        text-align: center;
+        display: block;
+        width: 508px;
+        padding: 1px;
+        border: 2px solid black;
+        margin: 11px auto;
+        font-size: 25px;
+        border-radius: 8px;
+    }
+
+    .container h1 {
+        text-align: center;
+    }
+
+    .container button {
+        display: block;
+        width: 74%;
+        margin: 20px auto;
+    }
+</style>
+<style type="text/css">
+    .a1 {
+      margin-top: 10px;
+      background-color: rgb(121, 220, 214);
+      padding: 10px
+    }
+
+    .student {
+      background-color: aqua;
+      text-align: justify;
+      text-decoration: underline;
+      letter-spacing: .15em;
+      word-spacing: 0.50em;
+      text-transform: uppercase;
+      text-indent: 1.5cm;
+      line-height: normal;
+    }
+
+    .box {
+      background-color: yellow;
+      width: 500px;
+      height: 150px;
+      position: relative;
+      animation-name: shubham;
+      animation-duration: 8s;
+      animation-iteration-count: 10;
+
+
+    }
+
+    @keyframes shubham {
+      from {
+        width: 1000px;
+
+      }
+
+      to {
+
+        width: 3000px;
+      }
+    }
+
+    .box1 {
+      background-color: green;
+      width: 500px;
+      height: 50px;
+      position: relative;
+      animation-name: gupta;
+      animation-duration: 10s;
+      animation-iteration-count: 10;
+    }
+
+    @keyframes gupta {
+      from {
+        width: 1000px;
+
+      }
+
+      to {
+
+        width: 3000px;
+      }
+    }
+
+    .box2 {
+      background-color: red;
+      width: 500px;
+      height: 50px;
+      position: relative;
+      animation-name: shubham;
+      animation-duration: 12s;
+      animation-iteration-count: 10;
+    }
+
+    @keyframes shubham {
+      from {
+        width: 1000px;
+
+      }
+
+      to {
+
+        width: 3000px;
+      }
+    }
+
+    .box3 {
+      background-color: palevioletred;
+      width: 150px;
+      height: 130px;
+      position: relative;
+    }
+
+    .box4 {
+      background-color: pink;
+      width: 300px;
+      height: 130px;
+      position: relative;
+    }
+
+    .box5 {
+      background-color: firebrick;
+      width: 400px;
+      height: 130px;
+      position: relative;
+    }
+
+    .box6 {
+      background-color: gold;
+      width: 500px;
+      height: 130px;
+      position: relative;
+    }
+
+    .box7 {
+      background-color: goldenrod;
+      width: 600px;
+      height: 130px;
+      position: relative;
+    }
+
+    .box8 {
+      background-color: darkblue;
+      width: 700px;
+      height: 130px;
+      position: relative;
+    }
+
+    .good {
+      font-size: xx-large;
+    }
+
+    body {
+      background-color: plum;
+    }
+  </style>
+<body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="gym1.png" alt="">
+            <div>shubham</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                 <li><a href="file:///D:/project/front%20end/Gym%20Website/packs.html">Our Packages</a></li>
+                
+                <li><a href="file:///D:/project/front%20end/Gym%20Website/fitness-cal-page.html">EMI Calculator</a></li>
+                <li><a href="file:///D:/project/front%20end/Gym%20Website/about-us-page.html">About Us</a></li>
+               
+            </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+               <div class="right">
+            <a class="btn" href="#popupcall">Call Us</a>
+            <a class="btn" href="#popupemail">Email Us</a>
+        </div>
+
+        <div id="popupcall" class="overlay">
+    <div class="popup">
+        <h2>Call Us Now</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            +91-98xxxxxxxx
+        </div>
+    </div>
+</div>
+
+<div id="popupemail" class="overlay">
+    <div class="popup">
+        <h2>Email Us Now</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            <p>shubhamtravilerxx@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+
+    </header>
+    <div class="container">
+        <h1>Join the best internation-traviler of Delhi now</h1>
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Age">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Gender">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Locality">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Email Id">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your Phone Number">
+            </div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+    <div class="student">
+        <div class="box">
+    
+          <center> </center>
+    
+          <div class="box1">
+    
+            <center>
+              <h1> injoy your life in usa with shubham taraver </h1>
+            </center>
+    
+          </div>
+          <div class="box2">
+    
+            <center>
+              <h1> injoy your life in usa with shubham taraver </h1>
+            </center>
+    
+          </div>
+        </div>
+    
+        <center>
+          <h1> ENJOY THE NEW YEAR PARTY IN NEWYORK CITY </h1>
+        </center>
+      </div>
+    
+      <div style="background-color:rgb(157, 102, 235);height:700px;;width: 2050px;;margin:10px">
+        <div style="background-color:yellow;width:2000px;display:inline-block; height: 100px;">
+          <div style="float:left;vertical-align:middle;text-align:center;padding:10px">
+            <strong style="">NEWYORK </strong>
+          </div>
+    
+          <div style="background-color:#0cde527a;float:right;padding:10px; width: 700px; height: 500px; ">
+            <nav>
+              <a class="good" href="">Home</a> |
+              <a class=" good"
+                href="https://thefactfile.org/new-york-state-facts/#:~:text=1%20New%20York%20was%20one%20of%20the%20original,is%20in%20New%20York.%20...%20More%20items...%20" "/css/">About</a>
+              |
+              <a class="good"
+                href="https://www.emirates.com/KR/english/book/?gclid=7b942fed5e151372c9784d7f07a48626&gclsrc=3p.ds&utm_source=bing&utm_medium=cpc&utm_campaign
+      =BIS_KR_EN_Gen_D_XXX_US_KR_E_&utm_term=tickets%20to%20the%20usa&utm_content=MSA_New%3Akr-en%3CCountryD%3DXXX%3EUS@KR%2Fphrase""/js/">visa
+                and ticket information </a> |
+              <a class="good" href="https://www.bing.com/maps?q=ny+times+mailing+address&FORM=RS1208" "/python/">Contact</a>
+            </nav>
+          </div>
+        </div>
+        <div style="display:inline-block;height:100%;width:100%;">
+          <div style="width:50%;height:100%;float:left;padding:10px">
+            <h1>creat by shubham for tourism USA</h1>
+            <article class="a1">
+              <h2>NYC tourism</h2>
+              <p>now tour newyork in only 2500$/150000 rupess/10000 yen </p>
+            </article>
+    
+            <article class="a1">
+              <h2>photos of NYC </h2>
+              <p> there are one million pepole are visit newyork every year , if you want one of them .
+              <h3>cleck the form under</h3>
+              </p>
+              <img src="C:\Users\Shubham\Downloads\Web capture_20-4-2022_185133_wallpapercave.com.jpeg" alt="altertest"
+                width="150" height="100">
+              <h3><a href="https://www.youtube.com/watch?v=0v4MNG_PSm8" width="800" height="600">most beatifull place video
+                  link for cleck</a></h3>
+              <P>
+              <h1>this pages one thanks for see </h1>
+              </p>
+            </article>
+          </div>
+          <div style="width: 900px;;height:90%;background-color:rgb(238, 213, 98);float:right;">
+            <h3>
+              <p> Here is a list of the top ten most populated cities in the US as of 2020:
+                New York City, NY (Population: 8,622,357)
+                Los Angeles, CA (Population: 4,085,014)
+                Chicago, IL (Population: 2,670,406)
+                Houston, TX (Population: 2,378,146)
+                Phoenix, AZ (Population: 1,743,469)
+                Philadelphia, PA (Population: 1,590,402)
+                San Antonio, TX (Population: 1,579,504)
+                San Diego, CA (Population: 1,469,490)
+                Dallas, TX (Population: 1,400,337)
+                San Jose, CA (Population: 1,036,242) </p>
+            </h3>
+            <p>
+            <h2> GUPTA SHUBHAM M </h2>
+            </p>
+            <mark>
+              <p>
+              <h2> Contact no : 9104115277</h2>
+              </p>
+    
+              <div class="box3">
+                <h1><a href="">google</a></h1>
+                <div class="box4">
+                  <h1> helo good moring</h1>
+                  <div class="box5">
+                    <h1> helo good moring</h1>
+                    <div class="box6">
+                      <h1> helo good moring</h1>
+                      <div class="box7">
+                        <h1> helo good moring</h1>
+                        <div class="box8">
+                          <h1> helo good moring</h1>
+    
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <P>Lorem ipsum dolor sit amet.</P>
+</body>
+
+
+</html>

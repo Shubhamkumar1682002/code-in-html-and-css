@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  .student {
+    background-color: rgb(255, 94, 0);
+
+  }
+
+  .box {
+    background-color: pink;
+    width: 150px;
+    height: 70px;
+    position: relative;
+    animation-name: shubham;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1000;
+
+
+  }
+
+  @keyframes shubham {
+    from {
+      width: 200px;
+
+    }
+
+    to {
+
+      width: 1700px;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5em;
+    background-color: rgb(209, 192, 255);
+
+  }
+
+  .menu {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+
+
+  .menu-group-heading {
+    margin: 0;
+    padding-bottom: 1em;
+    border-bottom: 2px solid rgb(211, 72, 72);
+  }
+
+  .menu-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    padding: 1.5em 0;
+  }
+
+  .menu-item {
+    display: flex;
+  }
+
+  .menu-item-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 1.5em;
+  }
+
+  .menu-item-text {
+    flex-grow: 1;
+  }
+
+  .menu-item-heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .menu-item-name {
+    margin-right: 1.5em;
+  }
+
+  .menu-item-description {
+    line-height: 1.6;
+  }
+
+  @media screen and (min-width: 992px) {
+    .menu {
+      font-size: 16px;
+    }
+
+    .menu-group {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-item-image {
+      width: 125px;
+      height: 125px;
+    }
+  }
+</style>
+
+<body>
+  <div class="student">
+    <div class="box">
+
+      - <center>
+        <h1>Restaurant NAME</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="menu">
+      <h2 class="menu-group-heading">
+        NASATA HOUSE ---------intership project by shubhamkumar gupta
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="file:///C:/Users/Shubham/OneDrive/Pictures/Screenshots/pizza-g181a06b16_640.jpg"  alt="priza">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">priza</span>
+              <span class="menu-item-price">239rs</span>
+            </h3>
+            <p class="menu-item-description">
+              a dish of Italian origin, consisting of a flat round base of dough baked with a topping of tomatoes and
+              cheese,
+              typically with added meat, fish, or vegetables:
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="cold coffee">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">cold coffee</span>
+              <span class="menu-item-price">129rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Iced coffee is a coffee beverage served cold. It may be prepared either by brewing coffee normally and
+              then serving it over ice or in cold milk,
+              or by brewing the coffee cold. In hot brewing, sweeteners and flavoring may be added before cooling, as
+              they dissolve faster. Iced coffee can also
+              be sweetened with pre-dissolved sugar in water
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="menu-group-heading">
+        Dessert
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="samosa">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">somosa</span>
+              <span class="menu-item-price">25rs</span>
+            </h3>
+            <p class="menu-item-description">
+              samosa (/səˈmoʊsə/) or singara is a fried or baked pastry with a savory filling, including ingredients
+              such as spiced potatoes
+              , onions, and peas. It may take different forms,
+              including triangular, cone, or half-moon shapes, depending on the region. Samosas are often accompanied by
+              chutney, .
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="dosa">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">dosa</span>
+              <span class="menu-item-price">90rs</span>
+            </h3>
+            <p class="menu-item-description">
+              A dosa is a thin batter originating from South India, made from a fermented batter predominantly
+              consisting
+              of lentils and rice. Its main ingredients are rice and black gram, ground together in a fine, smooth
+              batter with a
+              dash of salt, then fermented. Dosas are a common dish in South Indian ...
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="menu">
+      <h2 class="menu-group-heading">
+
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="vadapav">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">vadapav</span>
+              <span class="menu-item-price">45rs</span>
+            </h3>
+            <p class="menu-item-description">
+
+              ada pav, alternatively spelt wada pao, (listen) is a vegetarian fast food dish native to the state of
+              Maharashtra. The dish consists of a
+              deep fried potato dumpling placed inside a bread bun (pav) sliced almost in half through the middle. It is
+              generally
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="coclatmilk shak">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">coclatmilk shak</span>
+              <span class="menu-item-price">20rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Perfect for family, friends and ... No wonder we’ve become famous for our 30oz milkshakes and freshly
+              made waffles! Open every day from 4pm, we look forward to welcoming you to enjoy our menu, environment and
+              service. Coco's House, Queensway Rochdale. OL11 1TU...
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="menu-group-heading">
+
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="bireyane">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">bireyane</span>
+              <span class="menu-item-price">129rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Biryani (/bɜːrˈjɑːni/) is a mixed rice dish originating among the Muslims of the Indian subcontinent. It
+              is
+              made with Indian spices, rice, and usually some type of meat
+              (chicken, beef, goat, lamb, prawn, fish) or in some cases without any meat, and sometimes
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="tea">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">tea</span>
+              <span class="menu-item-price">29rs</span>
+            </h3>
+            <p class="menu-item-description">
+              ea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia
+              sinensis,
+              an evergreen shrub native to East Asia whic
+              h probably originated in the borderlands of southwestern China and northern Myanmar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="menu">
+      <h2 class="menu-group-heading">
+
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/000/fff" alt="mingo milk shak">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">mingo milk shak</span>
+              <span class="menu-item-price">80rs</span>
+            </h3>
+            <p class="menu-item-description">
+             
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/0f0/fff" alt="subway">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">subway</span>
+              <span class="menu-item-price">90rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, illo neque!
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="menu-group-heading">
+
+      </h2>
+      <div class="menu-group">
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/f00/000" alt="maggle">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">maggle</span>
+              <span class="menu-item-price">40rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, fugit consequatur?
+            </p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img class="menu-item-image" src="https://dummyimage.com/600x400/00f/000" alt="halawa">
+          <div class="menu-item-text">
+            <h3 class="menu-item-heading">
+              <span class="menu-item-name">halawa</span>
+              <span class="menu-item-price">100rs</span>
+            </h3>
+            <p class="menu-item-description">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati, ad vitae.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

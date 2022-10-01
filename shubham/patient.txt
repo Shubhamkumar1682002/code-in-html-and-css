@@ -1,0 +1,25 @@
+insternship 
+
+1 day = intero of softeware industry
+              and what  learn  in internship 
+ 
+ 2 day = base game in c launguage
+                
+
+3 day =  upgrade game use math
+
+           build hotel menu
+ 
+4 day = java intero , download , ide intro 
+              
+             bank project 
+
+5 day = intro holl html 
+              bulid web , form
+
+6 day = dould solving
+
+7 day =  database sql plsql
+             
+
+        
